@@ -8,7 +8,7 @@ Project Overview
 This project simulates the backend logic of an order management system, where inventory availability and customer credit must be validated before any order is processed. All business rules are enforced within the database layer — no application code required.
  
 Database
----------------
+-------------------------------------------
 Schema: inventory _db (retail/inventory domain)
 Key Tables:
 •	customer — stores customer records including credit limits
@@ -16,7 +16,7 @@ Key Tables:
 •	customer_order_line_item — individual line items within customer orders
  
 Components
------------------
+--------------------------------------------
 1. Stored Function — check_credit
 Validates whether a customer's credit limit covers a requested order amount.
 Returns TRUE if approved, FALSE if not.
@@ -41,7 +41,7 @@ Fires after a successful insert. Automatically decrements the qoh in merchandise
 
 
 How the Components Work Together
-----------
+-----------------------------------------
 Customer places order
         │
         ▼
@@ -59,7 +59,7 @@ Customer places order
 
  
 Skills Demonstrated
----------
+-----------------------------------------
 •	Stored functions with conditional return logic
 •	Stored procedures with IN/OUT parameters
 •	BEFORE and AFTER triggers with cross-table logic
@@ -67,7 +67,7 @@ Skills Demonstrated
 •	Modular design: procedure reused inside a trigger
  
 How to Run
---------
+--------------------------------------------
 1.	Set up a MySQL instance and create the world_peace schema with the required tables.
 2.	Run SQL_Project.sql to create all objects.
 3.	Use the test blocks at the bottom of each section to verify behavior.

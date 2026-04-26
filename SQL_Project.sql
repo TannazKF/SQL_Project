@@ -1,6 +1,6 @@
 -- Stored Functions, for customer credit checks
 
-USE world_peace;
+USE inventory _db;
 
 DROP FUNCTION IF EXISTS check_credit;
 
@@ -56,7 +56,7 @@ SELECT @qty;
 ---------------------------------------------------
 --Triggers, Decrease quantity on hand after inserting a new order line item.
 
-USE world_peace;
+USE inventory _db;
 
 DROP TRIGGER IF EXISTS decrease_inventory_tgr;
 
@@ -73,11 +73,11 @@ END $$
 
 DELIMITER ;
 
-DROP TRIGGER IF EXISTS inventory_check_tgr;
-
 
 ---------------------------------------------------
 --Triggers, Validate available inventory before inserting a new order line item.
+
+DROP TRIGGER IF EXISTS inventory_check_tgr;
 
 DELIMITER $$
 
